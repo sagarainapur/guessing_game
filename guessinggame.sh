@@ -2,7 +2,7 @@ echo How many files are present in the current directory
 
 read guess
 
-count=ls -l  wc -l
+count=ls -l | wc -l
 
 if [ $count -eq $guess ]
 then
