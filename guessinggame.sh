@@ -18,3 +18,15 @@ elif [ $count -lt $guess ]
 then
 	echo guess was too low
 fi
+
+#while statement
+while ![ $count -eq $guess ]
+do		
+	if [ $count -gt $guess ]
+	then
+		echo guess was too high	
+	else [ $count -lt $guess ]
+	then
+		echo guess was too low
+	fi
+done
