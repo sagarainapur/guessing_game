@@ -7,15 +7,17 @@ read guess
 #Calculate the number of files in directories 
 count=ls -l | wc -l
 
+#Function & while statement
+function checksGuess{
 
-#while statement
-while ![ $count -eq $guess ]
-do		
-	if [ $count -gt $guess ]
-	then
-		echo guess was too high	
-	else [ $count -lt $guess ]
-	then
-		echo guess was too low
-	fi
-done
+	while ![ $count -eq $guess ]
+	do		
+		if [ $count -gt $guess ]
+		then
+			echo guess was too high	
+		else [ $count -lt $guess ]
+		then
+			echo guess was too low
+		fi
+	done
+}
