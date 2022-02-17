@@ -1,5 +1,5 @@
 #Guessing game
-echo How many files are present in the current directory
+echo "How many files are present in the current directory"
 
 #Enter the guessing number
 read guess
