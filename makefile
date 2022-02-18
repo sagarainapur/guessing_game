@@ -1,14 +1,8 @@
-
-#The title of the project.
-say_hello:
-        @echo "This is a guessing.sh project"
-        
-        
-#The date and time at which make was run.
-generate:
-        @echo "$date"
-
-
-#The number of lines of code contained in guessinggame.sh.
-lines:
-        @echo "ls- l"
+   
+readme : guessinggame.sh
+	touch README.md
+	echo "Project title: __the unix workbench: Bash, Make, Git, and GitHub__" > README.md
+	echo "\nDate make ran at:" >> README.md
+	date >> README.md
+	echo "\nNumber of lines file guessinggame.sh contains:" >> README.md
+	cat guessinggame.sh | wc -l >> README.md
