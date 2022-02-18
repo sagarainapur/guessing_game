@@ -1,23 +1,29 @@
-#Guessing game
-echo "How many files are present in the current directory"
+#!/usr/bin/env bash
+filenum=$(ls | wc -l)
 
-#Enter the guessing number
-read guess
-
-#Calculate the number of files in directories 
-count=ls -l | wc -l
-
-#Function & while statement
-function checksGuess{
-
-	while ![ $count -eq $guess ]
-	do		
-		if [ $count -gt $guess ]
+function guess_filenum {
+	read guess
+	if [[ $guess -eq $filenum ]]
+	then
+		echo "Amazing!!! You finally guessed it!"
+		echo "fantasticccc"
+		echo "  So we have ..."
+		for f in $(ls)
+		do
+			echo "  - $f and "
+		done
+		echo "    ... and that was it."
+	else
+		if [[ $guess -gt $filenum ]]
 		then
-			echo guess was too high	
-		else [ $count -lt $guess ]
-		then
-			echo guess was too low
+			echo "There is less... try again and press Enter :"
+			guess_filenum
+		else
+			echo "There is more... try again and press Enter :"
+			guess_filenum
 		fi
-	done
+	fi
 }
+echo "Welcome to the guessing game!"
+echo "Guess how many files are in the current directory and press Enter :"
+guess_filenum
