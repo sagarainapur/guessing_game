@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 filenum=$(ls | wc -l)
-
 function guess_filenum {
 	read guess
 	if [[ $guess -eq $filenum ]]
